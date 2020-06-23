@@ -56,6 +56,7 @@ main {
 #toDo, #doing, #done {
     justify-self: center;
     margin: 0.5em;
+    justify-content: center;
 }
 
 #toDo {
@@ -87,19 +88,47 @@ main {
     border-right: 0.2em solid #202020;
 }
 
-#doneList {
-    
-}
 
 .card1, .card2,.card3,.card4,.card5,.card6,.card7,.card8,
-.card9,.card10,.card11,.card12,.card13,.card14,.card15,.card16 {
+.card9,.card10,.card11,.card12,.card13,.card14,.card15,.card16,
+.card17, .card18, .card19, .card20,.card21,.card22,.card23,.card24,.card25,.card26,
+.card27, .card28, .card29, .card30 {
     background-color: #202020;
     color: lavender;
-    padding: 0.5em;
+    padding: 0.8em;
     width: 80%;
-    margin: 0.5em auto;
+    margin: 0.8em auto;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 3px 4px 6px 2px #202020;
+    box-shadow: 0px 0px 8px 4px #202020;
     border: black 1px solid;
+    align-self: center;
+}
+
+
+#toDoList div > div, #doingList div > div, #doneList div > div {
+
+    background-color: #363535;
+}
+
+/* Footer */
+
+footer {
+    margin: 1em 0;
+    display: grid;
+    justify-content: center;
+}
+
+footer > svg {
+    height: 2em;
+    fill: lavender;
+}
+
+/* Media Query */
+
+@media (max-width: 720px){
+
+    body {
+        font-size: 0.7em;
+    }
 }
