@@ -3,7 +3,7 @@
 // Store the tasks and last task number
 const update = function (){
 
-    if(tasks){
+    if(tasks !== null){
         localStorage.setItem("tasks", JSON.stringify(tasks));
         localStorage.setItem("lastCard", cardNum.toString());
     } else {
@@ -27,8 +27,6 @@ const createNode = function(tag, content) {
 // Create new card
 const createCard = function (title){
 
-    console.log(tasks);
-
     const card = document.createElement('div');
     const cardTitle = document.createTextNode(title.toUpperCase());
     card.appendChild(cardTitle);
@@ -51,7 +49,7 @@ function loadTasks() {
 
     tasks = JSON.parse(localStorage.getItem("tasks"));
 
-    if(tasks){
+    if(tasks !== null){
 
         tasks.sort(function (a, b){
 
@@ -81,7 +79,9 @@ function loadTasks() {
                 document.querySelector("#"+t.parent).appendChild(card);
             }
         }
-    } 
+    } else {
+        tasks = [];
+    }
 }
 
 // Create new task
