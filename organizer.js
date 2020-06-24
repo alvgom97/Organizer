@@ -3,8 +3,13 @@
 // Store the tasks and last task number
 const update = function (){
 
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-    localStorage.setItem("lastCard", cardNum.toString());
+    if(tasks){
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+        localStorage.setItem("lastCard", cardNum.toString());
+    } else {
+        localStorage.setItem("tasks", "[]");
+    }
+    
 }
 
 // Create new node
